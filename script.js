@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
       let cargoMass = parseInt(document.querySelector('input[name="cargoMass"').value);
       
 
-      if(pilotName === "" || coPilotName === "" || fuelLevel === "" || cargoMass === ""){
+      if(pilotName === "" || coPilotName === ""){
          alert('Please enter some data below.')
       } else {
          
@@ -52,17 +52,18 @@ window.addEventListener('load', () => {
          pilotStatus.textContent = `${pilotName} is ready for launch.`;
          coPilotStatus.textContent = `${coPilotName} is ready for launch.`;
 
-         if(fuelLevel < 10000 || cargoMass === ''){
+         if(fuelLevel < 10000){
             faultyItems.style.visibility = 'visible';
             launchStatus.textContent = "Shuttle not ready for launch.";
             launchStatus.style.color = 'red';
             fuelStatus.textContent = 'Fuel is too low to launch.';
-         }else if(cargoMass > 10000 || cargoMass === ''){
+         }else if(cargoMass > 10000){
             faultyItems.style.visibility = 'visible';
             launchStatus.textContent = "Shuttle not ready for launch.";
             launchStatus.style.color = 'red';
             cargoStatus.textContent = 'Shuttle too heavy to launch.';
          } else{
+            faultyItems.style.visibility = 'hidden';
             launchStatus.textContent = 'Shuttle ready for launch';
             launchStatus.style.color = 'green';
             fuelStatus.textContent = 'Fuel level high enough for launch.';
