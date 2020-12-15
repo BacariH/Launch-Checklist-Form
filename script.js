@@ -3,10 +3,11 @@ const formBtn = document.querySelector('#formSubmit');
 const launchStatus = document.querySelector('#launchStatus');
 const fuelStatus = document.querySelector('#fuelStatus');
 const cargoStatus = document.querySelector('#cargoStatus');
-let missionTarget = document.querySelector('#missionTarget');
-let randomPlanetNumber = Math.floor(Math.random() * Math.floor(7));
+const missionTarget = document.querySelector('#missionTarget');
+
 
 async function getPlanets() {
+   let randomPlanetNumber = Math.floor(Math.random() * Math.floor(6));
    try{
       let res = await fetch('https://handlers.education.launchcode.org/static/planets.json');
       let data = await res.json();
