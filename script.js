@@ -42,6 +42,8 @@ window.addEventListener('load', () => {
 
       if(pilotName === "" || coPilotName === ""){
          alert('Please enter some data below.')
+      } else if(typeof fuelLevel !== 'number' || fuelLevel === null && typeof cargoMass !== 'number' || cargoMass === null){
+         alert('Please enter a number!');
       } else {
          
          let faultyItems = document.querySelector('#faultyItems');
